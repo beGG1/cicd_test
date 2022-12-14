@@ -1,0 +1,22 @@
+# coding: utf8
+[flake8]
+max-line-lenght = 120
+extend-ignore = [
+    F401, # imported but unused
+]
+
+exclude =
+    *test*,
+    doc/,
+    db/,
+    README.md,
+    LICENCE,
+    .gitignore,
+    .git,
+    .flake8,
+    __pycache__,
+    *venv*,
+    Dockerfile,
+    docker-compose.yaml,
+    .pytest_cache,
+
