@@ -21,8 +21,9 @@ jobs:
       - name: Pytest
         run: pytest
       - name: Install Docker
-        run: curl -fsSL https://get.docker.com -o get-docker.sh
-        run: DRY_RUN=1 sudo sh ./get-docker.sh
+        run: |
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          DRY_RUN=1 sudo sh ./get-docker.sh
       - name: build Docker
         run: docker build -t myimage .
       - name: run Docker and healthcheck
