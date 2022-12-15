@@ -27,5 +27,6 @@ jobs:
       - name: build Docker
         run: docker build -t myimage .
       - name: run Docker and healthcheck
-        run: docker run -d --name mycontainer -p 80:80 myimage
-        run: curl http://127.0.0.1/health_check
+        run: |
+          docker run -d --name mycontainer -p 80:80 myimage
+          curl http://127.0.0.1/health_check
