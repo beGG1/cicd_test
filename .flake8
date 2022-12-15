@@ -3,6 +3,7 @@
 max-line-lenght = 120
 extend-ignore = [
     F401, # imported but unused
+    S101, # Use of assert
 ]
 
 exclude =
