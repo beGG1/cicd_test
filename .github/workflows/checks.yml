@@ -20,3 +20,11 @@ jobs:
         run: flake8 .
       - name: Pytest
         run: pytest
+      - name: Install Docker
+        run: curl -fsSL https://get.docker.com -o get-docker.sh
+        run: DRY_RUN=1 sudo sh ./get-docker.sh
+      - name: build Docker
+        run: docker build -t myimage .
+      - name: run Docker and healthcheck
+        run: docker run -d --name mycontainer -p 80:80 myimage
+        run: curl http://127.0.0.1/health_check
