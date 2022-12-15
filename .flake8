@@ -6,7 +6,6 @@ extend-ignore = [
 ]
 
 exclude =
-    *test*,
     doc/,
     db/,
     README.md,
